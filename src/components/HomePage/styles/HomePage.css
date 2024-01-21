@@ -3,6 +3,7 @@
 }
 
 .home__image {
+  background-image: url(/src/img/pokedex.png);
   margin-top: -113px;
   margin-bottom: 50px;
   max-width: 100%;
