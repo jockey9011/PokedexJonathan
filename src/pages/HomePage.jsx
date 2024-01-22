@@ -27,12 +27,13 @@ const HomePage = () => {
 
   let imageUrl;
 
+
 if (typeof process !== "undefined") {
   // Código solo para el servidor (Node.js)
-  imageUrl = process.env.PUBLIC_URL + "/src/pages/img/pokedex.png";
+  imageUrl = process.env.PUBLIC_URL + "/img/pokedex.png";
 } else {
   // Código para el navegador
-  imageUrl = "/src/pages/img/pokedex.png";
+  imageUrl = "/img/pokedex.png";
 }
 
   return (
