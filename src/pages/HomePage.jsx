@@ -25,10 +25,20 @@ const HomePage = () => {
     }
   };
 
+  let imageUrl;
+
+if (typeof process !== "undefined") {
+  // Código solo para el servidor (Node.js)
+  imageUrl = process.env.PUBLIC_URL + "/src/pages/img/pokedex.png";
+} else {
+  // Código para el navegador
+  imageUrl = "/src/pages/img/pokedex.png";
+}
+
   return (
     <>
       <div className="home__container">
-        <img className="home__image" src="src/pages/img/pokedex.png" alt="img pokedex" />
+        <img className="home__image" src={imageUrl} alt="img pokedex" />
         <h2 className="home__title">Hi Trainer!</h2>
         <p className="home__p">To start this app, give me your trainer name</p>
         <form onSubmit={handleSubmit}>
