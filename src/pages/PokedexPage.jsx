@@ -50,6 +50,8 @@ const PokedexPage = () => {
     setCurrentPage(1); // Reiniciar a la primera página al cambiar la cantidad de cartas por página
   };
 
+  let imageUrl;
+
   if (typeof process !== "undefined") {
     // Código solo para el servidor (Node.js)
     imageUrl = process.env.PUBLIC_URL + "/img/pokedex.png";
