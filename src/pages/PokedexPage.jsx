@@ -50,10 +50,18 @@ const PokedexPage = () => {
     setCurrentPage(1); // Reiniciar a la primera página al cambiar la cantidad de cartas por página
   };
 
+  if (typeof process !== "undefined") {
+    // Código solo para el servidor (Node.js)
+    imageUrl = process.env.PUBLIC_URL + "/img/pokedex.png";
+  } else {
+    // Código para el navegador
+    imageUrl = "/img/pokedex.png";
+  }
+
   return (
     <div>
       <hr className="pokecard__top__red"></hr>
-      <img className="pokecard__top__image" src="src/img/pokedex.png" alt="" />
+      <img className="pokecard__top__image" src={imageUrl} alt="" />
       <hr className="pokecard__top__black"></hr>
       <h2 className="pokecard__top__title">
         Hi <span className="pokecard__top__trainerName">{trainerName}</span>, here you can find your favorite pokemon
